@@ -11,7 +11,7 @@ include { HISAT2_ALIGN } from './modules/hisat2_align.nf'
 
 // Primary input
 params.reads = "$baseDir/data/reads/ENCSR000COQ1_1.fastq.gz"
-params.hisat2_index_zip = "$baseDir/data/genome_index.tar.gz"
+params.hisat2_index_zip = "$baseDir/data/aligned/genome_index.tar.gz"
 
 workflow {
     log.info """\
