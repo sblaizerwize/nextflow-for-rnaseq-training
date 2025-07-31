@@ -1,0 +1,14 @@
+{
+	"n_targets": 207175,
+	"n_bootstraps": 0,
+	"n_processed": 29735360,
+	"n_pseudoaligned": 18661942,
+	"n_unique": 4666783,
+	"p_pseudoaligned": 62.8,
+	"p_unique": 15.7,
+	"kallisto_version": "0.51.1",
+	"index_version": 13,
+	"k-mer length": 31,
+	"start_time": "Wed Jul 30 20:52:35 2025",
+	"call": "kallisto quant -i homo-genome.index -o SRR8668758_trimmed-kallisto -t 8 --single -l 275 -s 30 SRR8668758_trimmed.fq.gz"
+}

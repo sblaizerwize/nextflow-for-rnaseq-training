@@ -3,7 +3,7 @@
 // Module INCLUDE statements
 include { FASTQC } from './modules/fastqc.nf'
 include { TRIM_GALORE } from './modules/trim_galore.nf'
-include { KALLISTO_QUAN } from './modules/hisat2_align.nf'
+include { KALLISTO_QUAN } from './modules/kallisto_quan.nf'
 include { MULTIQC } from './modules/multiqc.nf'
 
 /*
@@ -12,7 +12,7 @@ include { MULTIQC } from './modules/multiqc.nf'
 
 // Primary input
 params.reads = "$baseDir/data/single-end.csv"
-params.transcriptome = "$baseDir/data/aligned/genome_index.tar.gz"
+params.transcriptome = "$baseDir/data/aligned/homo-genome.index"
 params.outdir = "results"
 params.report_id = "all_single-end"
 

@@ -1,0 +1,260 @@
+juil.-30 22:44:00.824 [main] DEBUG nextflow.cli.Launcher - $> nextflow run . -profile batch --reads 's3://diy-transcriptomics-rna-seq-data/data/single-end.csv' --transcriptome 's3://diy-transcriptomics-rna-seq-data/data/homo-genome.index' --outdir 's3://nextflow-rnaseq-kallisto/results' -with-report report.html -with-timeline timeline.html -with-trace trace.txt
+juil.-30 22:44:01.079 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.6
+juil.-30 22:44:01.163 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/smarquez/.nextflow/plugins; core-plugins: nf-amazon@2.15.0,nf-azure@1.16.0,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.1,nf-k8s@1.0.0,nf-tower@1.11.4,nf-wave@1.12.1
+juil.-30 22:44:01.242 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+juil.-30 22:44:01.244 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+juil.-30 22:44:01.249 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+juil.-30 22:44:01.279 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+juil.-30 22:44:02.911 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Volumes/DataWinBackup/NEXTFLOW/nextflow-for-rnaseq-training-main/rnaseq-aws-diy-kallisto/nextflow.config
+juil.-30 22:44:02.916 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Volumes/DataWinBackup/NEXTFLOW/nextflow-for-rnaseq-training-main/rnaseq-aws-diy-kallisto/nextflow.config
+juil.-30 22:44:02.952 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/smarquez/.nextflow/secrets/store.json
+juil.-30 22:44:02.958 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@767599a7] - activable => nextflow.secret.LocalSecretsProvider@767599a7
+juil.-30 22:44:02.979 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `batch`
+juil.-30 22:44:03.099 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [batch, docker]
+juil.-30 22:44:03.152 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+juil.-30 22:44:03.194 [main] DEBUG nextflow.cli.CmdRun - Launching `./main.nf` [exotic_monod] DSL2 - revision: b4a11516b4
+juil.-30 22:44:03.197 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[nf-amazon@2.15.0]
+juil.-30 22:44:03.197 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-amazon@2.15.0]
+juil.-30 22:44:03.201 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-amazon version: 2.15.0
+juil.-30 22:44:03.289 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-amazon@2.15.0' resolved
+juil.-30 22:44:03.290 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-amazon@2.15.0'
+juil.-30 22:44:03.523 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-amazon@2.15.0
+juil.-30 22:44:03.561 [main] DEBUG nextflow.file.FileHelper - > Added 'S3FileSystemProvider' to list of installed providers [s3]
+juil.-30 22:44:03.687 [main] DEBUG nextflow.Session - Session UUID: f953fe51-9baf-4682-81f8-ed858683bb6a
+juil.-30 22:44:03.688 [main] DEBUG nextflow.Session - Run name: exotic_monod
+juil.-30 22:44:03.688 [main] DEBUG nextflow.Session - Executor pool size: 4
+juil.-30 22:44:03.728 [main] DEBUG nextflow.file.FileHelper - Creating a file system instance for provider: S3FileSystemProvider
+juil.-30 22:44:03.753 [main] DEBUG nextflow.cloud.aws.config.AwsConfig - AWS S3 config properties: {max_error_retry=5}
+juil.-30 22:44:04.398 [main] DEBUG nextflow.cloud.aws.AwsClientFactory - Merging AWS credentials file '/Users/smarquez/.aws/credentials' and config file '/Users/smarquez/.aws/config'
+juil.-30 22:44:05.253 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+juil.-30 22:44:05.266 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+juil.-30 22:44:05.462 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.04.6 build 5954
+  Created: 01-07-2025 11:27 UTC (13:27 CEST)
+  System: Mac OS X 13.7.3
+  Runtime: Groovy 4.0.26 on OpenJDK 64-Bit Server VM 21.0.2+13-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 25008@MacBook-Pro.local [127.0.0.1]
+  CPUs: 4 - Mem: 16 GB (14.3 MB) - Swap: 3 GB (1.3 GB)
+juil.-30 22:44:06.610 [main] DEBUG nextflow.Session - Work-dir: s3://nextflow-rnaseq-kallisto/test_env [Mac OS X]
+juil.-30 22:44:06.611 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Volumes/DataWinBackup/NEXTFLOW/nextflow-for-rnaseq-training-main/rnaseq-aws-diy-kallisto/bin
+juil.-30 22:44:06.667 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[AwsBatchExecutor]
+juil.-30 22:44:06.693 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+juil.-30 22:44:06.723 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+juil.-30 22:44:06.765 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+juil.-30 22:44:06.786 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
+juil.-30 22:44:06.901 [main] DEBUG nextflow.Session - Session start
+juil.-30 22:44:06.913 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /Volumes/DataWinBackup/NEXTFLOW/nextflow-for-rnaseq-training-main/rnaseq-aws-diy-kallisto/trace.txt
+juil.-30 22:44:07.460 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+juil.-30 22:44:08.033 [main] INFO  nextflow.Nextflow -         R N A S E Q - N F   P I P E L I N E
+        ===================================
+        transcriptome: s3://diy-transcriptomics-rna-seq-data/data/homo-genome.index
+        reads        : s3://diy-transcriptomics-rna-seq-data/data/single-end.csv
+        outdir       : s3://nextflow-rnaseq-kallisto/results
+    
+juil.-30 22:44:08.422 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: awsbatch
+juil.-30 22:44:08.422 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'awsbatch'
+juil.-30 22:44:08.429 [main] DEBUG nextflow.executor.Executor - [warm up] executor > awsbatch
+juil.-30 22:44:08.452 [main] DEBUG nextflow.util.ThrottlingExecutor - Creating throttling executor with opts: nextflow.util.ThrottlingExecutor$Options(poolName:AWSBatch-executor, limiter:RateLimiter[stableRate=50.0qps], poolSize:20, maxPoolSize:20, queueSize:5000, maxRetries:10, keepAlive:1m, autoThrottle:true, errorBurstDelay:1s, rampUpInterval:100, rampUpFactor:1.2, rampUpMaxRate:1.7976931348623157E308, backOffFactor:2.0, backOffMinRate:0.0166666667, retryDelay:1s)
+juil.-30 22:44:08.462 [main] DEBUG nextflow.util.ThrottlingExecutor - Creating throttling executor with opts: nextflow.util.ThrottlingExecutor$Options(poolName:AWSBatch-reaper, limiter:RateLimiter[stableRate=50.0qps], poolSize:20, maxPoolSize:20, queueSize:5000, maxRetries:10, keepAlive:1m, autoThrottle:true, errorBurstDelay:1s, rampUpInterval:100, rampUpFactor:1.2, rampUpMaxRate:1.7976931348623157E308, backOffFactor:2.0, backOffMinRate:0.0166666667, retryDelay:1s)
+juil.-30 22:44:08.468 [main] DEBUG n.cloud.aws.batch.AwsBatchExecutor - Creating parallel monitor for executor 'awsbatch' > pollInterval=10s; dumpInterval=5m
+juil.-30 22:44:08.481 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: awsbatch)
+juil.-30 22:44:08.494 [main] DEBUG nextflow.cloud.aws.AwsClientFactory - Merging AWS credentials file '/Users/smarquez/.aws/credentials' and config file '/Users/smarquez/.aws/config'
+juil.-30 22:44:08.574 [main] DEBUG n.cloud.aws.batch.AwsBatchExecutor - [AWS BATCH] Executor options=AwsOptions(remoteBinDir:null, fetchInstanceType:false, region:eu-west-1, jobRole:null, logsGroup:null, retryMode:standard, shareIdentifier:null, schedulingPriority:0, cliPath:/home/ec2-user/miniconda/bin/aws, volumes:[], maxParallelTransfers:4, maxTransferAttempts:5, maxSpotAttempts:null, delayBetweenAttempts:10s, storageClass:null, storageEncryption:null, storageKmsKeyId:null, s3Acl:null, debug:null, requesterPays:null, awsCli:/home/ec2-user/miniconda/bin/aws --region eu-west-1, fargateMode:false, s5cmdPath:null, executionRole:null)
+juil.-30 22:44:08.638 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC': maxForks=0; fair=false; array=0
+juil.-30 22:44:08.726 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:TRIM_GALORE` matches process TRIM_GALORE
+juil.-30 22:44:08.734 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: awsbatch
+juil.-30 22:44:08.735 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'awsbatch'
+juil.-30 22:44:08.736 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'TRIM_GALORE': maxForks=0; fair=false; array=0
+juil.-30 22:44:08.747 [main] DEBUG nextflow.file.FileHelper - Creating a file system instance for provider: S3FileSystemProvider
+juil.-30 22:44:08.747 [main] DEBUG nextflow.cloud.aws.config.AwsConfig - AWS S3 config properties: {max_error_retry=5}
+juil.-30 22:44:08.748 [main] DEBUG nextflow.cloud.aws.AwsClientFactory - Merging AWS credentials file '/Users/smarquez/.aws/credentials' and config file '/Users/smarquez/.aws/config'
+juil.-30 22:44:08.773 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:KALLISTO_QUAN` matches process KALLISTO_QUAN
+juil.-30 22:44:08.779 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: awsbatch
+juil.-30 22:44:08.779 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'awsbatch'
+juil.-30 22:44:08.780 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'KALLISTO_QUAN': maxForks=0; fair=false; array=0
+juil.-30 22:44:08.829 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: awsbatch
+juil.-30 22:44:08.830 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'awsbatch'
+juil.-30 22:44:08.831 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MULTIQC': maxForks=0; fair=false; array=0
+juil.-30 22:44:08.838 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: FASTQC, TRIM_GALORE, KALLISTO_QUAN, MULTIQC
+juil.-30 22:44:08.848 [main] DEBUG nextflow.Session - Igniting dataflow network (5)
+juil.-30 22:44:08.885 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTQC
+juil.-30 22:44:08.885 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > TRIM_GALORE
+juil.-30 22:44:08.886 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > KALLISTO_QUAN
+juil.-30 22:44:08.886 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MULTIQC
+juil.-30 22:44:08.888 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_f545c13798137f67: /Volumes/DataWinBackup/NEXTFLOW/nextflow-for-rnaseq-training-main/rnaseq-aws-diy-kallisto/modules/multiqc.nf
+  Script_ba66246a9ac7b690: /Volumes/DataWinBackup/NEXTFLOW/nextflow-for-rnaseq-training-main/rnaseq-aws-diy-kallisto/modules/kallisto_quan.nf
+  Script_2aa4a29be00874f1: /Volumes/DataWinBackup/NEXTFLOW/nextflow-for-rnaseq-training-main/rnaseq-aws-diy-kallisto/main.nf
+  Script_47bdd4798e236024: /Volumes/DataWinBackup/NEXTFLOW/nextflow-for-rnaseq-training-main/rnaseq-aws-diy-kallisto/modules/fastqc.nf
+  Script_b6e09e14b3d981fc: /Volumes/DataWinBackup/NEXTFLOW/nextflow-for-rnaseq-training-main/rnaseq-aws-diy-kallisto/modules/trim_galore.nf
+juil.-30 22:44:08.888 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+juil.-30 22:44:08.888 [main] DEBUG nextflow.Session - Session await
+juil.-30 22:44:11.070 [AWSBatch-executor-8] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] [AWS BATCH] Found job definition name=nf-community-wave-seqera-io-library-trim-galore-0-6-10--1bf8ca4e1967cd18:1; container=community.wave.seqera.io/library/trim-galore:0.6.10--1bf8ca4e1967cd18
+juil.-30 22:44:11.284 [AWSBatch-executor-13] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (7)` submitted > job=414f48f0-bc0d-462e-a44c-6bb84bf86848; work-dir=s3://nextflow-rnaseq-kallisto/test_env/f7/a9d1bde3babaf0246ff308dfaaf9d1
+juil.-30 22:44:11.285 [AWSBatch-executor-13] INFO  nextflow.Session - [f7/a9d1bd] Submitted process > TRIM_GALORE (7)
+juil.-30 22:44:11.329 [AWSBatch-executor-5] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (3)` submitted > job=c3e25ffc-11cf-4d56-90bd-35a0320a931b; work-dir=s3://nextflow-rnaseq-kallisto/test_env/4b/e30a39ffb455fab4905bc96f18b3be
+juil.-30 22:44:11.329 [AWSBatch-executor-5] INFO  nextflow.Session - [4b/e30a39] Submitted process > FASTQC (3)
+juil.-30 22:44:11.339 [AWSBatch-executor-7] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (4)` submitted > job=1e78a122-a360-42f3-8732-0d0818da2ed4; work-dir=s3://nextflow-rnaseq-kallisto/test_env/d1/bf98f6b2f00b591dbd2e1efbfbd2a1
+juil.-30 22:44:11.340 [AWSBatch-executor-7] INFO  nextflow.Session - [d1/bf98f6] Submitted process > FASTQC (4)
+juil.-30 22:44:11.342 [AWSBatch-executor-16] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (8)` submitted > job=8a0d61fb-e7b6-4ffc-9eab-485fad0c1b6d; work-dir=s3://nextflow-rnaseq-kallisto/test_env/01/c24894a51cfab936e03b234545bf0c
+juil.-30 22:44:11.343 [AWSBatch-executor-16] INFO  nextflow.Session - [01/c24894] Submitted process > FASTQC (8)
+juil.-30 22:44:11.343 [AWSBatch-executor-9] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (5)` submitted > job=1aa397a8-2920-4ac3-831d-bb75c730bb6d; work-dir=s3://nextflow-rnaseq-kallisto/test_env/ae/7f7fa158286a621a94abe68398dfd7
+juil.-30 22:44:11.343 [AWSBatch-executor-9] INFO  nextflow.Session - [ae/7f7fa1] Submitted process > FASTQC (5)
+juil.-30 22:44:11.345 [AWSBatch-executor-6] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (2)` submitted > job=aa0df737-e0c9-4f1e-946d-c64347013453; work-dir=s3://nextflow-rnaseq-kallisto/test_env/9f/302942bf5ed1a0fb999eb1cffd16c7
+juil.-30 22:44:11.345 [AWSBatch-executor-6] INFO  nextflow.Session - [9f/302942] Submitted process > TRIM_GALORE (2)
+juil.-30 22:44:11.350 [AWSBatch-executor-11] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (6)` submitted > job=6c7720d7-9703-4256-9017-d8539a9577ac; work-dir=s3://nextflow-rnaseq-kallisto/test_env/64/d72aca3d60731a05504305c6c256fb
+juil.-30 22:44:11.350 [AWSBatch-executor-11] INFO  nextflow.Session - [64/d72aca] Submitted process > TRIM_GALORE (6)
+juil.-30 22:44:11.355 [AWSBatch-executor-4] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (4)` submitted > job=feecc9d4-3e82-4cb2-a36d-4125b6aa9e96; work-dir=s3://nextflow-rnaseq-kallisto/test_env/e2/0f4d775b1cf53ab2b70a4ae0ca5a99
+juil.-30 22:44:11.356 [AWSBatch-executor-4] INFO  nextflow.Session - [e2/0f4d77] Submitted process > TRIM_GALORE (4)
+juil.-30 22:44:11.356 [AWSBatch-executor-3] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (1)` submitted > job=1a9c5f45-4885-43c0-aab0-caf19e008888; work-dir=s3://nextflow-rnaseq-kallisto/test_env/20/18e7f99d89275713c03cdb47b3a6ef
+juil.-30 22:44:11.357 [AWSBatch-executor-3] INFO  nextflow.Session - [20/18e7f9] Submitted process > TRIM_GALORE (1)
+juil.-30 22:44:11.356 [AWSBatch-executor-12] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (7)` submitted > job=aead5e3f-10ad-4364-96e8-be74ba372823; work-dir=s3://nextflow-rnaseq-kallisto/test_env/55/d3a5d444415180d20fe0eaa0f4f29c
+juil.-30 22:44:11.358 [AWSBatch-executor-12] INFO  nextflow.Session - [55/d3a5d4] Submitted process > FASTQC (7)
+juil.-30 22:44:11.361 [AWSBatch-executor-10] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (5)` submitted > job=5f61121b-89bf-4166-8cca-88d3395ad3b0; work-dir=s3://nextflow-rnaseq-kallisto/test_env/8a/b72aa2ee09560f6eee236a563e9eef
+juil.-30 22:44:11.362 [AWSBatch-executor-10] INFO  nextflow.Session - [8a/b72aa2] Submitted process > TRIM_GALORE (5)
+juil.-30 22:44:11.367 [AWSBatch-executor-19] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (10)` submitted > job=820dab2e-caf0-4969-98dc-3455368b9a68; work-dir=s3://nextflow-rnaseq-kallisto/test_env/f7/7cfb365e6639fafd24b2a7d3f8b7ff
+juil.-30 22:44:11.368 [AWSBatch-executor-19] INFO  nextflow.Session - [f7/7cfb36] Submitted process > FASTQC (10)
+juil.-30 22:44:11.380 [AWSBatch-executor-14] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (6)` submitted > job=9b4ba6d3-0ac4-4c2e-9b47-5f9de9a8c3fa; work-dir=s3://nextflow-rnaseq-kallisto/test_env/80/abe68c191043063183f02fd137ba07
+juil.-30 22:44:11.381 [AWSBatch-executor-2] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (1)` submitted > job=e5bd7d82-9c26-46f0-9690-3f717cc4abf2; work-dir=s3://nextflow-rnaseq-kallisto/test_env/13/5505b18743b2411b3613671cb3090f
+juil.-30 22:44:11.384 [AWSBatch-executor-15] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (8)` submitted > job=707734df-7a43-4581-951e-739928e7addb; work-dir=s3://nextflow-rnaseq-kallisto/test_env/c7/7027d189cdc0c802e32a4621985ae1
+juil.-30 22:44:11.390 [AWSBatch-executor-15] INFO  nextflow.Session - [c7/7027d1] Submitted process > TRIM_GALORE (8)
+juil.-30 22:44:11.391 [AWSBatch-executor-17] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (9)` submitted > job=21ebe296-1c8a-4457-96b7-49a953d48972; work-dir=s3://nextflow-rnaseq-kallisto/test_env/1f/b33ed2c52b19a9e6b5ab01112d6c70
+juil.-30 22:44:11.391 [AWSBatch-executor-17] INFO  nextflow.Session - [1f/b33ed2] Submitted process > FASTQC (9)
+juil.-30 22:44:11.392 [AWSBatch-executor-2] INFO  nextflow.Session - [13/5505b1] Submitted process > FASTQC (1)
+juil.-30 22:44:11.396 [AWSBatch-executor-14] INFO  nextflow.Session - [80/abe68c] Submitted process > FASTQC (6)
+juil.-30 22:44:11.399 [AWSBatch-executor-18] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (9)` submitted > job=b7c4d0ee-1299-403e-a8e9-e4924181584e; work-dir=s3://nextflow-rnaseq-kallisto/test_env/8c/2c53ad38eba65d5999f8820d46e6f3
+juil.-30 22:44:11.400 [AWSBatch-executor-18] INFO  nextflow.Session - [8c/2c53ad] Submitted process > TRIM_GALORE (9)
+juil.-30 22:44:11.403 [AWSBatch-executor-8] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (3)` submitted > job=fe24a3f8-bded-4c56-9499-3aca42927b3e; work-dir=s3://nextflow-rnaseq-kallisto/test_env/2e/95670b399cbfff8ef332f662db5f7b
+juil.-30 22:44:11.403 [AWSBatch-executor-8] INFO  nextflow.Session - [2e/95670b] Submitted process > TRIM_GALORE (3)
+juil.-30 22:44:11.407 [AWSBatch-executor-1] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (2)` submitted > job=6e5f131e-a9e1-4694-a470-bc4dcb619422; work-dir=s3://nextflow-rnaseq-kallisto/test_env/d8/ea82d5ba0d6b40ce921a8fbfc21f12
+juil.-30 22:44:11.407 [AWSBatch-executor-1] INFO  nextflow.Session - [d8/ea82d5] Submitted process > FASTQC (2)
+juil.-30 22:44:11.434 [AWSBatch-executor-20] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (10)` submitted > job=3af5feff-7ebe-4d04-9030-db4d08e5e22c; work-dir=s3://nextflow-rnaseq-kallisto/test_env/fb/718ace2ac6a8d99f7cc44b8dde7bda
+juil.-30 22:44:11.434 [AWSBatch-executor-20] INFO  nextflow.Session - [fb/718ace] Submitted process > TRIM_GALORE (10)
+juil.-30 22:47:29.223 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: FASTQC (5); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/ae/7f7fa158286a621a94abe68398dfd7]
+juil.-30 22:47:29.226 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+juil.-30 22:47:29.777 [TaskFinalizer-1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+juil.-30 22:47:39.174 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: TRIM_GALORE (5); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/8a/b72aa2ee09560f6eee236a563e9eef]
+juil.-30 22:47:40.922 [AWSBatch-executor-36] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] [AWS BATCH] Found job definition name=nf-community-wave-seqera-io-library-kallisto-0-51-1--b63691b6841c7a52:1; container=community.wave.seqera.io/library/kallisto:0.51.1--b63691b6841c7a52
+juil.-30 22:47:41.073 [AWSBatch-executor-36] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `KALLISTO_QUAN (1)` submitted > job=036e9ef4-caf1-4356-9d47-0b0f4d6a78ca; work-dir=s3://nextflow-rnaseq-kallisto/test_env/4b/29982b713b7770f57a00702f8e4a59
+juil.-30 22:47:41.075 [AWSBatch-executor-36] INFO  nextflow.Session - [4b/29982b] Submitted process > KALLISTO_QUAN (1)
+juil.-30 22:49:18.764 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 19 -- submitted tasks are shown below
+~> TaskHandler[id: 14; name: TRIM_GALORE (7); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/f7/a9d1bde3babaf0246ff308dfaaf9d1]
+~> TaskHandler[id: 8; name: FASTQC (3); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/4b/e30a39ffb455fab4905bc96f18b3be]
+~> TaskHandler[id: 9; name: FASTQC (4); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/d1/bf98f6b2f00b591dbd2e1efbfbd2a1]
+~> TaskHandler[id: 15; name: FASTQC (8); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/01/c24894a51cfab936e03b234545bf0c]
+~> TaskHandler[id: 3; name: TRIM_GALORE (2); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/9f/302942bf5ed1a0fb999eb1cffd16c7]
+~> TaskHandler[id: 13; name: TRIM_GALORE (6); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/64/d72aca3d60731a05504305c6c256fb]
+~> TaskHandler[id: 6; name: TRIM_GALORE (4); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/e2/0f4d775b1cf53ab2b70a4ae0ca5a99]
+~> TaskHandler[id: 1; name: TRIM_GALORE (1); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/20/18e7f99d89275713c03cdb47b3a6ef]
+~> TaskHandler[id: 12; name: FASTQC (7); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/55/d3a5d444415180d20fe0eaa0f4f29c]
+~> TaskHandler[id: 19; name: FASTQC (10); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/f7/7cfb365e6639fafd24b2a7d3f8b7ff]
+.. remaining tasks omitted.
+juil.-30 22:49:49.231 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: FASTQC (4); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/d1/bf98f6b2f00b591dbd2e1efbfbd2a1]
+juil.-30 22:51:19.129 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: TRIM_GALORE (4); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/e2/0f4d775b1cf53ab2b70a4ae0ca5a99]
+juil.-30 22:51:20.804 [AWSBatch-executor-59] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `KALLISTO_QUAN (2)` submitted > job=a1ce959d-b38e-4a23-9c6f-53132d8ec948; work-dir=s3://nextflow-rnaseq-kallisto/test_env/07/77160a1c0b84adbe572e63c17e7c46
+juil.-30 22:51:20.805 [AWSBatch-executor-59] INFO  nextflow.Session - [07/77160a] Submitted process > KALLISTO_QUAN (2)
+juil.-30 22:51:39.203 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: FASTQC (7); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/55/d3a5d444415180d20fe0eaa0f4f29c]
+juil.-30 22:52:09.192 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: FASTQC (8); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/01/c24894a51cfab936e03b234545bf0c]
+juil.-30 22:52:09.262 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 21; name: KALLISTO_QUAN (1); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/4b/29982b713b7770f57a00702f8e4a59]
+juil.-30 22:52:39.181 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: FASTQC (9); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/1f/b33ed2c52b19a9e6b5ab01112d6c70]
+juil.-30 22:53:39.254 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: FASTQC (2); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/d8/ea82d5ba0d6b40ce921a8fbfc21f12]
+juil.-30 22:53:59.255 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: FASTQC (3); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/4b/e30a39ffb455fab4905bc96f18b3be]
+juil.-30 22:53:59.490 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: FASTQC (1); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/13/5505b18743b2411b3613671cb3090f]
+juil.-30 22:53:59.565 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: FASTQC (6); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/80/abe68c191043063183f02fd137ba07]
+juil.-30 22:54:18.931 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 10 -- submitted tasks are shown below
+~> TaskHandler[id: 14; name: TRIM_GALORE (7); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/f7/a9d1bde3babaf0246ff308dfaaf9d1]
+~> TaskHandler[id: 3; name: TRIM_GALORE (2); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/9f/302942bf5ed1a0fb999eb1cffd16c7]
+~> TaskHandler[id: 13; name: TRIM_GALORE (6); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/64/d72aca3d60731a05504305c6c256fb]
+~> TaskHandler[id: 1; name: TRIM_GALORE (1); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/20/18e7f99d89275713c03cdb47b3a6ef]
+~> TaskHandler[id: 19; name: FASTQC (10); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/f7/7cfb365e6639fafd24b2a7d3f8b7ff]
+~> TaskHandler[id: 16; name: TRIM_GALORE (8); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/c7/7027d189cdc0c802e32a4621985ae1]
+~> TaskHandler[id: 18; name: TRIM_GALORE (9); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/8c/2c53ad38eba65d5999f8820d46e6f3]
+~> TaskHandler[id: 4; name: TRIM_GALORE (3); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/2e/95670b399cbfff8ef332f662db5f7b]
+~> TaskHandler[id: 20; name: TRIM_GALORE (10); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/fb/718ace2ac6a8d99f7cc44b8dde7bda]
+~> TaskHandler[id: 22; name: KALLISTO_QUAN (2); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/07/77160a1c0b84adbe572e63c17e7c46]
+juil.-30 22:55:49.313 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: TRIM_GALORE (7); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/f7/a9d1bde3babaf0246ff308dfaaf9d1]
+juil.-30 22:55:51.058 [AWSBatch-executor-87] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `KALLISTO_QUAN (3)` submitted > job=23d65bf9-0fb3-46eb-a833-1eb6a48352d3; work-dir=s3://nextflow-rnaseq-kallisto/test_env/68/55eedc9aff050c365d0ad41fe907c1
+juil.-30 22:55:51.059 [AWSBatch-executor-87] INFO  nextflow.Session - [68/55eedc] Submitted process > KALLISTO_QUAN (3)
+juil.-30 22:56:49.349 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: TRIM_GALORE (8); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/c7/7027d189cdc0c802e32a4621985ae1]
+juil.-30 22:56:49.421 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 22; name: KALLISTO_QUAN (2); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/07/77160a1c0b84adbe572e63c17e7c46]
+juil.-30 22:56:51.177 [AWSBatch-executor-94] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `KALLISTO_QUAN (4)` submitted > job=e2e5c382-b680-4839-acd0-a095a1a47317; work-dir=s3://nextflow-rnaseq-kallisto/test_env/f1/ad709fa340786d45d12da7f9c0fe69
+juil.-30 22:56:51.177 [AWSBatch-executor-94] INFO  nextflow.Session - [f1/ad709f] Submitted process > KALLISTO_QUAN (4)
+juil.-30 22:56:59.320 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: FASTQC (10); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/f7/7cfb365e6639fafd24b2a7d3f8b7ff]
+juil.-30 22:56:59.390 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: TRIM_GALORE (9); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/8c/2c53ad38eba65d5999f8820d46e6f3]
+juil.-30 22:57:01.062 [AWSBatch-executor-96] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `KALLISTO_QUAN (5)` submitted > job=c626070e-0ab2-4ff3-8a90-18d4d83c348e; work-dir=s3://nextflow-rnaseq-kallisto/test_env/e9/f4edf4995a4811ed65d4d9086a8200
+juil.-30 22:57:01.063 [AWSBatch-executor-96] INFO  nextflow.Session - [e9/f4edf4] Submitted process > KALLISTO_QUAN (5)
+juil.-30 22:59:09.383 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: TRIM_GALORE (2); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/9f/302942bf5ed1a0fb999eb1cffd16c7]
+juil.-30 22:59:10.981 [AWSBatch-executor-110] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `KALLISTO_QUAN (6)` submitted > job=3fdd629f-3116-4022-8145-dd4ae3415484; work-dir=s3://nextflow-rnaseq-kallisto/test_env/cf/d7aa487a52b4c4cc2946cd9b70cc99
+juil.-30 22:59:10.981 [AWSBatch-executor-110] INFO  nextflow.Session - [cf/d7aa48] Submitted process > KALLISTO_QUAN (6)
+juil.-30 22:59:19.046 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 8 -- submitted tasks are shown below
+~> TaskHandler[id: 13; name: TRIM_GALORE (6); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/64/d72aca3d60731a05504305c6c256fb]
+~> TaskHandler[id: 1; name: TRIM_GALORE (1); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/20/18e7f99d89275713c03cdb47b3a6ef]
+~> TaskHandler[id: 4; name: TRIM_GALORE (3); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/2e/95670b399cbfff8ef332f662db5f7b]
+~> TaskHandler[id: 20; name: TRIM_GALORE (10); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/fb/718ace2ac6a8d99f7cc44b8dde7bda]
+~> TaskHandler[id: 23; name: KALLISTO_QUAN (3); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/68/55eedc9aff050c365d0ad41fe907c1]
+~> TaskHandler[id: 24; name: KALLISTO_QUAN (4); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/f1/ad709fa340786d45d12da7f9c0fe69]
+~> TaskHandler[id: 25; name: KALLISTO_QUAN (5); status: SUBMITTED; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/e9/f4edf4995a4811ed65d4d9086a8200]
+~> TaskHandler[id: 26; name: KALLISTO_QUAN (6); status: SUBMITTED; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/cf/d7aa487a52b4c4cc2946cd9b70cc99]
+juil.-30 22:59:49.390 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: TRIM_GALORE (1); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/20/18e7f99d89275713c03cdb47b3a6ef]
+juil.-30 22:59:51.219 [AWSBatch-executor-115] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `KALLISTO_QUAN (7)` submitted > job=1fb87ac5-8553-4036-89f2-fa84aac4f974; work-dir=s3://nextflow-rnaseq-kallisto/test_env/7f/c51a15c6674092969a03cd4e6057c8
+juil.-30 22:59:51.220 [AWSBatch-executor-115] INFO  nextflow.Session - [7f/c51a15] Submitted process > KALLISTO_QUAN (7)
+juil.-30 23:00:29.403 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: TRIM_GALORE (6); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/64/d72aca3d60731a05504305c6c256fb]
+juil.-30 23:00:30.776 [AWSBatch-executor-120] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `KALLISTO_QUAN (8)` submitted > job=21b8ad3b-ddb6-4d1b-8654-51e590993c81; work-dir=s3://nextflow-rnaseq-kallisto/test_env/df/256db46721d76e38b4769f881822e5
+juil.-30 23:00:30.777 [AWSBatch-executor-120] INFO  nextflow.Session - [df/256db4] Submitted process > KALLISTO_QUAN (8)
+juil.-30 23:00:39.377 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: TRIM_GALORE (3); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/2e/95670b399cbfff8ef332f662db5f7b]
+juil.-30 23:00:40.824 [AWSBatch-executor-122] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `KALLISTO_QUAN (9)` submitted > job=92af7b09-00fc-4a00-bc63-115bd2dd25ae; work-dir=s3://nextflow-rnaseq-kallisto/test_env/16/459dcb252d168de0d71eaf2ca96fb9
+juil.-30 23:00:40.824 [AWSBatch-executor-122] INFO  nextflow.Session - [16/459dcb] Submitted process > KALLISTO_QUAN (9)
+juil.-30 23:04:19.128 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 8 -- submitted tasks are shown below
+~> TaskHandler[id: 20; name: TRIM_GALORE (10); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/fb/718ace2ac6a8d99f7cc44b8dde7bda]
+~> TaskHandler[id: 23; name: KALLISTO_QUAN (3); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/68/55eedc9aff050c365d0ad41fe907c1]
+~> TaskHandler[id: 24; name: KALLISTO_QUAN (4); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/f1/ad709fa340786d45d12da7f9c0fe69]
+~> TaskHandler[id: 25; name: KALLISTO_QUAN (5); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/e9/f4edf4995a4811ed65d4d9086a8200]
+~> TaskHandler[id: 26; name: KALLISTO_QUAN (6); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/cf/d7aa487a52b4c4cc2946cd9b70cc99]
+~> TaskHandler[id: 27; name: KALLISTO_QUAN (7); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/7f/c51a15c6674092969a03cd4e6057c8]
+~> TaskHandler[id: 28; name: KALLISTO_QUAN (8); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/df/256db46721d76e38b4769f881822e5]
+~> TaskHandler[id: 29; name: KALLISTO_QUAN (9); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/16/459dcb252d168de0d71eaf2ca96fb9]
+juil.-30 23:04:59.542 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 23; name: KALLISTO_QUAN (3); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/68/55eedc9aff050c365d0ad41fe907c1]
+juil.-30 23:04:59.613 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: KALLISTO_QUAN (4); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/f1/ad709fa340786d45d12da7f9c0fe69]
+juil.-30 23:06:59.567 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 20; name: TRIM_GALORE (10); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/fb/718ace2ac6a8d99f7cc44b8dde7bda]
+juil.-30 23:07:00.538 [PublishDir-8] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'S3StreamUploader' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+juil.-30 23:07:01.245 [AWSBatch-executor-161] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `KALLISTO_QUAN (10)` submitted > job=34605306-eba8-4042-a1e5-aef441a7af1d; work-dir=s3://nextflow-rnaseq-kallisto/test_env/98/0b596c0aec1cc5578cacdde4e49de1
+juil.-30 23:07:01.245 [AWSBatch-executor-161] INFO  nextflow.Session - [98/0b596c] Submitted process > KALLISTO_QUAN (10)
+juil.-30 23:07:39.574 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 25; name: KALLISTO_QUAN (5); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/e9/f4edf4995a4811ed65d4d9086a8200]
+juil.-30 23:09:19.289 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 5 -- submitted tasks are shown below
+~> TaskHandler[id: 26; name: KALLISTO_QUAN (6); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/cf/d7aa487a52b4c4cc2946cd9b70cc99]
+~> TaskHandler[id: 27; name: KALLISTO_QUAN (7); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/7f/c51a15c6674092969a03cd4e6057c8]
+~> TaskHandler[id: 28; name: KALLISTO_QUAN (8); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/df/256db46721d76e38b4769f881822e5]
+~> TaskHandler[id: 29; name: KALLISTO_QUAN (9); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/16/459dcb252d168de0d71eaf2ca96fb9]
+~> TaskHandler[id: 30; name: KALLISTO_QUAN (10); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/98/0b596c0aec1cc5578cacdde4e49de1]
+juil.-30 23:11:39.691 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 26; name: KALLISTO_QUAN (6); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/cf/d7aa487a52b4c4cc2946cd9b70cc99]
+juil.-30 23:12:19.730 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 28; name: KALLISTO_QUAN (8); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/df/256db46721d76e38b4769f881822e5]
+juil.-30 23:12:59.681 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: KALLISTO_QUAN (7); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/7f/c51a15c6674092969a03cd4e6057c8]
+juil.-30 23:13:59.731 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: KALLISTO_QUAN (9); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/16/459dcb252d168de0d71eaf2ca96fb9]
+juil.-30 23:14:19.393 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 30; name: KALLISTO_QUAN (10); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/98/0b596c0aec1cc5578cacdde4e49de1]
+juil.-30 23:19:19.544 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 30; name: KALLISTO_QUAN (10); status: RUNNING; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/98/0b596c0aec1cc5578cacdde4e49de1]
+juil.-30 23:22:19.992 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 30; name: KALLISTO_QUAN (10); status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/98/0b596c0aec1cc5578cacdde4e49de1]
+juil.-30 23:22:26.085 [AWSBatch-executor-254] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] [AWS BATCH] Found job definition name=nf-community-wave-seqera-io-library-pip_multiqc-ad8f247edb55897c:1; container=community.wave.seqera.io/library/pip_multiqc:ad8f247edb55897c
+juil.-30 23:22:26.201 [AWSBatch-executor-254] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `MULTIQC` submitted > job=e129f269-e0e0-40ca-a952-9ebd5a1fa9e8; work-dir=s3://nextflow-rnaseq-kallisto/test_env/44/cba344c1a1e018a8d0918a736f438c
+juil.-30 23:22:26.201 [AWSBatch-executor-254] INFO  nextflow.Session - [44/cba344] Submitted process > MULTIQC
+juil.-30 23:24:19.710 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 31; name: MULTIQC; status: SUBMITTED; exit: -; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/44/cba344c1a1e018a8d0918a736f438c]
+juil.-30 23:25:40.066 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 31; name: MULTIQC; status: COMPLETED; exit: 0; error: -; workDir: s3://nextflow-rnaseq-kallisto/test_env/44/cba344c1a1e018a8d0918a736f438c]
+juil.-30 23:25:40.375 [main] DEBUG nextflow.Session - Session await > all processes finished
+juil.-30 23:25:49.731 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: awsbatch) - terminating tasks monitor poll loop
+juil.-30 23:25:49.732 [main] DEBUG nextflow.Session - Session await > all barriers passed
+juil.-30 23:25:49.734 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+juil.-30 23:25:54.740 [main] INFO  nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (1 files)
+juil.-30 23:25:57.371 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+juil.-30 23:25:57.388 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=31; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=1d 1h 52m 8s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=20; peakCpus=100; peakMemory=180 GB; ]
+juil.-30 23:25:57.388 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+juil.-30 23:25:57.390 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+juil.-30 23:25:58.621 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+juil.-30 23:25:58.837 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+juil.-30 23:25:58.877 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-amazon@2.15.0'
+juil.-30 23:25:58.878 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-amazon
+juil.-30 23:25:58.880 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+juil.-30 23:25:58.883 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'S3StreamUploader' shutdown completed (hard=false)
+juil.-30 23:25:58.883 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

@@ -1,0 +1,312 @@
+juil.-25 18:44:06.711 [main] DEBUG nextflow.cli.Launcher - $> nextflow run 'https://github.com/sblaizerwize/nextflow-for-rnaseq-training' -r main -latest -profile batch --reads 's3://diy-transcriptomics-rna-seq-data/data/single-end.csv' --transcriptome 's3://diy-transcriptomics-rna-seq-data/data/genome_index.tar.gz' --outdir 's3://diy-transcriptomics-rna-seq-data/results' -with-report report-config.html -with-timeline timeline.html -with-trace trace.txt
+juil.-25 18:44:06.910 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 25.04.6
+juil.-25 18:44:06.967 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/smarquez/.nextflow/plugins; core-plugins: nf-amazon@2.15.0,nf-azure@1.16.0,nf-cloudcache@0.4.3,nf-codecommit@0.2.3,nf-console@1.2.1,nf-google@1.21.1,nf-k8s@1.0.0,nf-tower@1.11.4,nf-wave@1.12.1
+juil.-25 18:44:07.038 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+juil.-25 18:44:07.040 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+juil.-25 18:44:07.045 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+juil.-25 18:44:07.067 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+juil.-25 18:44:07.098 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /Users/smarquez/.nextflow/scm
+juil.-25 18:44:07.196 [main] DEBUG nextflow.scm.RepositoryFactory - Found Git repository result: [RepositoryFactory]
+juil.-25 18:44:07.219 [main] DEBUG nextflow.scm.RepositoryFactory - Git url=nextflow.scm.GitUrl(https, null, github.com, sblaizerwize/nextflow-for-rnaseq-training) -> config=ProviderConfig[name: github, platform: github, server: https://github.com]
+juil.-25 18:44:07.220 [main] DEBUG nextflow.scm.AssetManager - Repository URL: https://github.com/sblaizerwize/nextflow-for-rnaseq-training; Project: sblaizerwize/nextflow-for-rnaseq-training; Hub provider: github
+juil.-25 18:44:08.099 [main] DEBUG nextflow.scm.AssetManager - Git config: /Users/smarquez/.nextflow/assets/sblaizerwize/nextflow-for-rnaseq-training/.git/config; branch: null; remote: origin; url: https://github.com/sblaizerwize/nextflow-for-rnaseq-training.git
+juil.-25 18:44:08.103 [main] INFO  nextflow.cli.CmdRun - Pulling sblaizerwize/nextflow-for-rnaseq-training ...
+juil.-25 18:44:08.105 [main] DEBUG nextflow.scm.AssetManager - Pull pipeline sblaizerwize/nextflow-for-rnaseq-training  -- Using local path: /Users/smarquez/.nextflow/assets/sblaizerwize/nextflow-for-rnaseq-training
+juil.-25 18:44:10.168 [main] INFO  nextflow.cli.CmdRun -  Fast-forward
+juil.-25 18:44:10.193 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /Users/smarquez/.nextflow/assets/sblaizerwize/nextflow-for-rnaseq-training/nextflow.config
+juil.-25 18:44:10.195 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /Volumes/DataWinBackup/NEXTFLOW/nextflow-for-rnaseq-training-main/nextflow.config
+juil.-25 18:44:10.199 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/smarquez/.nextflow/assets/sblaizerwize/nextflow-for-rnaseq-training/nextflow.config
+juil.-25 18:44:10.199 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Volumes/DataWinBackup/NEXTFLOW/nextflow-for-rnaseq-training-main/nextflow.config
+juil.-25 18:44:10.217 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/smarquez/.nextflow/secrets/store.json
+juil.-25 18:44:10.223 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@68e2d03e] - activable => nextflow.secret.LocalSecretsProvider@68e2d03e
+juil.-25 18:44:10.261 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `batch`
+juil.-25 18:44:10.377 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `batch`
+juil.-25 18:44:10.456 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [batch, docker]
+juil.-25 18:44:10.504 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 by global default
+juil.-25 18:44:10.506 [main] DEBUG nextflow.cli.CmdRun - Launching `https://github.com/sblaizerwize/nextflow-for-rnaseq-training` [romantic_archimedes] DSL2 - revision: 05673a0658 [main]
+juil.-25 18:44:10.510 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[nf-amazon@2.15.0]
+juil.-25 18:44:10.511 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[nf-amazon@2.15.0]
+juil.-25 18:44:10.514 [main] DEBUG nextflow.plugin.PluginUpdater - Installing plugin nf-amazon version: 2.15.0
+juil.-25 18:44:10.555 [main] INFO  org.pf4j.AbstractPluginManager - Plugin 'nf-amazon@2.15.0' resolved
+juil.-25 18:44:10.555 [main] INFO  org.pf4j.AbstractPluginManager - Start plugin 'nf-amazon@2.15.0'
+juil.-25 18:44:10.764 [main] DEBUG nextflow.plugin.BasePlugin - Plugin started nf-amazon@2.15.0
+juil.-25 18:44:10.798 [main] DEBUG nextflow.file.FileHelper - > Added 'S3FileSystemProvider' to list of installed providers [s3]
+juil.-25 18:44:10.904 [main] DEBUG nextflow.Session - Session UUID: 38180ade-6e47-4c20-8865-4b50c9f3484e
+juil.-25 18:44:10.904 [main] DEBUG nextflow.Session - Run name: romantic_archimedes
+juil.-25 18:44:10.905 [main] DEBUG nextflow.Session - Executor pool size: 4
+juil.-25 18:44:10.936 [main] DEBUG nextflow.file.FileHelper - Creating a file system instance for provider: S3FileSystemProvider
+juil.-25 18:44:10.960 [main] DEBUG nextflow.cloud.aws.config.AwsConfig - AWS S3 config properties: {max_error_retry=5}
+juil.-25 18:44:11.525 [main] DEBUG nextflow.cloud.aws.AwsClientFactory - Merging AWS credentials file '/Users/smarquez/.aws/credentials' and config file '/Users/smarquez/.aws/config'
+juil.-25 18:44:12.052 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+juil.-25 18:44:12.061 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+juil.-25 18:44:12.209 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 25.04.6 build 5954
+  Created: 01-07-2025 11:27 UTC (13:27 CEST)
+  System: Mac OS X 13.7.3
+  Runtime: Groovy 4.0.26 on OpenJDK 64-Bit Server VM 21.0.2+13-LTS
+  Encoding: UTF-8 (UTF-8)
+  Process: 4683@MacBook-Pro.local [127.0.0.1]
+  CPUs: 4 - Mem: 16 GB (25.3 MB) - Swap: 1 GB (1001.5 MB)
+juil.-25 18:44:12.948 [main] DEBUG nextflow.Session - Work-dir: s3://diy-transcriptomics-rna-seq-data/test_env [Mac OS X]
+juil.-25 18:44:12.948 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /Users/smarquez/.nextflow/assets/sblaizerwize/nextflow-for-rnaseq-training/bin
+juil.-25 18:44:13.010 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[AwsBatchExecutor]
+juil.-25 18:44:13.034 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+juil.-25 18:44:13.059 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+juil.-25 18:44:13.121 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+juil.-25 18:44:13.145 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 5; maxThreads: 1000
+juil.-25 18:44:13.307 [main] DEBUG nextflow.Session - Session start
+juil.-25 18:44:13.319 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /Volumes/DataWinBackup/NEXTFLOW/nextflow-for-rnaseq-training-main/trace.txt
+juil.-25 18:44:13.699 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+juil.-25 18:44:14.105 [main] INFO  nextflow.Nextflow -         R N A S E Q - N F   P I P E L I N E
+        ===================================
+        transcriptome: s3://diy-transcriptomics-rna-seq-data/data/genome_index.tar.gz
+        reads        : s3://diy-transcriptomics-rna-seq-data/data/single-end.csv
+        outdir       : s3://diy-transcriptomics-rna-seq-data/results
+    
+juil.-25 18:44:14.392 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: awsbatch
+juil.-25 18:44:14.392 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'awsbatch'
+juil.-25 18:44:14.397 [main] DEBUG nextflow.executor.Executor - [warm up] executor > awsbatch
+juil.-25 18:44:14.415 [main] DEBUG nextflow.util.ThrottlingExecutor - Creating throttling executor with opts: nextflow.util.ThrottlingExecutor$Options(poolName:AWSBatch-executor, limiter:RateLimiter[stableRate=50.0qps], poolSize:20, maxPoolSize:20, queueSize:5000, maxRetries:10, keepAlive:1m, autoThrottle:true, errorBurstDelay:1s, rampUpInterval:100, rampUpFactor:1.2, rampUpMaxRate:1.7976931348623157E308, backOffFactor:2.0, backOffMinRate:0.0166666667, retryDelay:1s)
+juil.-25 18:44:14.422 [main] DEBUG nextflow.util.ThrottlingExecutor - Creating throttling executor with opts: nextflow.util.ThrottlingExecutor$Options(poolName:AWSBatch-reaper, limiter:RateLimiter[stableRate=50.0qps], poolSize:20, maxPoolSize:20, queueSize:5000, maxRetries:10, keepAlive:1m, autoThrottle:true, errorBurstDelay:1s, rampUpInterval:100, rampUpFactor:1.2, rampUpMaxRate:1.7976931348623157E308, backOffFactor:2.0, backOffMinRate:0.0166666667, retryDelay:1s)
+juil.-25 18:44:14.426 [main] DEBUG n.cloud.aws.batch.AwsBatchExecutor - Creating parallel monitor for executor 'awsbatch' > pollInterval=10s; dumpInterval=5m
+juil.-25 18:44:14.436 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: awsbatch)
+juil.-25 18:44:14.441 [main] DEBUG nextflow.cloud.aws.AwsClientFactory - Merging AWS credentials file '/Users/smarquez/.aws/credentials' and config file '/Users/smarquez/.aws/config'
+juil.-25 18:44:14.501 [main] DEBUG n.cloud.aws.batch.AwsBatchExecutor - [AWS BATCH] Executor options=AwsOptions(remoteBinDir:null, fetchInstanceType:false, region:eu-west-1, jobRole:null, logsGroup:null, retryMode:standard, shareIdentifier:null, schedulingPriority:0, cliPath:/home/ec2-user/miniconda/bin/aws, volumes:[], maxParallelTransfers:4, maxTransferAttempts:5, maxSpotAttempts:null, delayBetweenAttempts:10s, storageClass:null, storageEncryption:null, storageKmsKeyId:null, s3Acl:null, debug:null, requesterPays:null, awsCli:/home/ec2-user/miniconda/bin/aws --region eu-west-1, fargateMode:false, s5cmdPath:null, executionRole:null)
+juil.-25 18:44:14.539 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC': maxForks=0; fair=false; array=0
+juil.-25 18:44:14.617 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:TRIM_GALORE` matches process TRIM_GALORE
+juil.-25 18:44:14.623 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: awsbatch
+juil.-25 18:44:14.623 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'awsbatch'
+juil.-25 18:44:14.625 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'TRIM_GALORE': maxForks=0; fair=false; array=0
+juil.-25 18:44:14.647 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withName:HISAT2_ALIGN` matches process HISAT2_ALIGN
+juil.-25 18:44:14.651 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: awsbatch
+juil.-25 18:44:14.651 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'awsbatch'
+juil.-25 18:44:14.653 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'HISAT2_ALIGN': maxForks=0; fair=false; array=0
+juil.-25 18:44:14.698 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: awsbatch
+juil.-25 18:44:14.698 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'awsbatch'
+juil.-25 18:44:14.699 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MULTIQC': maxForks=0; fair=false; array=0
+juil.-25 18:44:14.705 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: FASTQC, TRIM_GALORE, HISAT2_ALIGN, MULTIQC
+juil.-25 18:44:14.709 [main] DEBUG nextflow.Session - Igniting dataflow network (5)
+juil.-25 18:44:14.719 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTQC
+juil.-25 18:44:14.720 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > TRIM_GALORE
+juil.-25 18:44:14.720 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > HISAT2_ALIGN
+juil.-25 18:44:14.720 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MULTIQC
+juil.-25 18:44:14.723 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_f545c13798137f67: /Users/smarquez/.nextflow/assets/sblaizerwize/nextflow-for-rnaseq-training/modules/multiqc.nf
+  Script_cb20087537ab8444: /Users/smarquez/.nextflow/assets/sblaizerwize/nextflow-for-rnaseq-training/modules/hisat2_align.nf
+  Script_47bdd4798e236024: /Users/smarquez/.nextflow/assets/sblaizerwize/nextflow-for-rnaseq-training/modules/fastqc.nf
+  Script_b6e09e14b3d981fc: /Users/smarquez/.nextflow/assets/sblaizerwize/nextflow-for-rnaseq-training/modules/trim_galore.nf
+  Script_d9af634f38c04de5: /Users/smarquez/.nextflow/assets/sblaizerwize/nextflow-for-rnaseq-training/main.nf
+juil.-25 18:44:14.723 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+juil.-25 18:44:14.723 [main] DEBUG nextflow.Session - Session await
+juil.-25 18:44:16.515 [AWSBatch-executor-7] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] [AWS BATCH] Found job definition name=nf-community-wave-seqera-io-library-trim-galore-0-6-10--1bf8ca4e1967cd18:1; container=community.wave.seqera.io/library/trim-galore:0.6.10--1bf8ca4e1967cd18
+juil.-25 18:44:16.671 [AWSBatch-executor-12] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (7)` submitted > job=4eded5cb-b682-4e18-ac49-3449a50657d1; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/3d/6d051c7adf173d2de2e9cda582b8e6
+juil.-25 18:44:16.672 [AWSBatch-executor-12] INFO  nextflow.Session - [3d/6d051c] Submitted process > TRIM_GALORE (7)
+juil.-25 18:44:16.763 [AWSBatch-executor-14] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (8)` submitted > job=d406ce09-b1d1-4586-ba65-09e39789759c; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/65/e9cb64e99625cbf43e28a0412ddcdb
+juil.-25 18:44:16.764 [AWSBatch-executor-14] INFO  nextflow.Session - [65/e9cb64] Submitted process > FASTQC (8)
+juil.-25 18:44:16.783 [AWSBatch-executor-6] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (4)` submitted > job=966b1f41-d600-42ff-9345-5a0475fd5de2; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/cc/135887896adcd3ab752d1f3441c95f
+juil.-25 18:44:16.784 [AWSBatch-executor-6] INFO  nextflow.Session - [cc/135887] Submitted process > FASTQC (4)
+juil.-25 18:44:16.787 [AWSBatch-executor-18] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (9)` submitted > job=4cdf82ce-9e64-45fd-ad9d-26f76b7fde7e; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/42/d2556a1ce152d3bd542b4c059393db
+juil.-25 18:44:16.787 [AWSBatch-executor-18] INFO  nextflow.Session - [42/d2556a] Submitted process > TRIM_GALORE (9)
+juil.-25 18:44:16.788 [AWSBatch-executor-10] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (6)` submitted > job=4c0ba40e-ef16-46e8-9ed7-d004771046b0; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/35/827a3ae1d9557ee335755d784aa074
+juil.-25 18:44:16.789 [AWSBatch-executor-10] INFO  nextflow.Session - [35/827a3a] Submitted process > FASTQC (6)
+juil.-25 18:44:16.792 [AWSBatch-executor-17] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (9)` submitted > job=4708458c-32c4-49ad-8717-bd60dc1b1cee; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/da/68a39ee43a17f1eccafa6f17bc596c
+juil.-25 18:44:16.793 [AWSBatch-executor-17] INFO  nextflow.Session - [da/68a39e] Submitted process > FASTQC (9)
+juil.-25 18:44:16.793 [AWSBatch-executor-4] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (3)` submitted > job=363ef75a-e9ec-49b4-887f-db0cbc7ffe66; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/d7/b6b4c7cf6752261a878b07d70fb141
+juil.-25 18:44:16.794 [AWSBatch-executor-4] INFO  nextflow.Session - [d7/b6b4c7] Submitted process > TRIM_GALORE (3)
+juil.-25 18:44:16.799 [AWSBatch-executor-9] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (5)` submitted > job=98996c24-53e7-49a9-bfc4-c2efe6217948; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/17/9d6560ced59e8cc1f98603c409923a
+juil.-25 18:44:16.799 [AWSBatch-executor-9] INFO  nextflow.Session - [17/9d6560] Submitted process > TRIM_GALORE (5)
+juil.-25 18:44:16.802 [AWSBatch-executor-5] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (2)` submitted > job=414454cf-591e-4074-af55-aa3ff2369cdd; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/ca/62a5c51bbe88bf3a39b17dc269c5a9
+juil.-25 18:44:16.802 [AWSBatch-executor-5] INFO  nextflow.Session - [ca/62a5c5] Submitted process > TRIM_GALORE (2)
+juil.-25 18:44:16.803 [AWSBatch-executor-2] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (2)` submitted > job=46b38ebe-d8c5-4cea-8597-4aaa81e4d46d; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/c5/e6e63cae6ab6b0f68c858f03632ff4
+juil.-25 18:44:16.804 [AWSBatch-executor-2] INFO  nextflow.Session - [c5/e6e63c] Submitted process > FASTQC (2)
+juil.-25 18:44:16.805 [AWSBatch-executor-19] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (10)` submitted > job=fec7df60-b3f3-4512-ac18-4439109c27be; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/86/3f43771219733a31b6837d3d070b47
+juil.-25 18:44:16.806 [AWSBatch-executor-19] INFO  nextflow.Session - [86/3f4377] Submitted process > TRIM_GALORE (10)
+juil.-25 18:44:16.824 [AWSBatch-executor-1] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (1)` submitted > job=cb09fc9c-6e92-42a2-a9ee-a165ba28a137; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/a2/a5b51d78a039177e0d7384e8bc556e
+juil.-25 18:44:16.825 [AWSBatch-executor-1] INFO  nextflow.Session - [a2/a5b51d] Submitted process > TRIM_GALORE (1)
+juil.-25 18:44:16.830 [AWSBatch-executor-7] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (4)` submitted > job=918430e5-0320-4781-abf4-4f7511613ddb; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/71/d129c888976013a678c5a501c83f23
+juil.-25 18:44:16.830 [AWSBatch-executor-7] INFO  nextflow.Session - [71/d129c8] Submitted process > TRIM_GALORE (4)
+juil.-25 18:44:16.847 [AWSBatch-executor-8] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (1)` submitted > job=368992da-63f9-4159-9f87-78de010cd248; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/61/a579c336bb841cb34aaaa23dd12314
+juil.-25 18:44:16.848 [AWSBatch-executor-8] INFO  nextflow.Session - [61/a579c3] Submitted process > FASTQC (1)
+juil.-25 18:44:16.849 [AWSBatch-executor-3] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (3)` submitted > job=87705050-c1b1-4059-bcfb-781df4f14638; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/62/1ee00b1d2142b693469d8cf0552ef9
+juil.-25 18:44:16.850 [AWSBatch-executor-3] INFO  nextflow.Session - [62/1ee00b] Submitted process > FASTQC (3)
+juil.-25 18:44:16.851 [AWSBatch-executor-13] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (6)` submitted > job=13b411d1-2d00-4b26-90eb-6298701c495e; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/cb/341221ea991c1f38c4c6c981952d35
+juil.-25 18:44:16.852 [AWSBatch-executor-13] INFO  nextflow.Session - [cb/341221] Submitted process > TRIM_GALORE (6)
+juil.-25 18:44:16.853 [AWSBatch-executor-15] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (5)` submitted > job=150620a6-a467-464e-bb9e-88bbc227fcfe; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/14/ed9a30e75033e753bc060edfb2ac6e
+juil.-25 18:44:16.854 [AWSBatch-executor-15] INFO  nextflow.Session - [14/ed9a30] Submitted process > FASTQC (5)
+juil.-25 18:44:16.856 [AWSBatch-executor-16] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `TRIM_GALORE (8)` submitted > job=61da5a88-a3d4-424f-ab11-98ad5f487f3f; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/a9/b0653b8cfd470533f0cb5e32e310fb
+juil.-25 18:44:16.856 [AWSBatch-executor-16] INFO  nextflow.Session - [a9/b0653b] Submitted process > TRIM_GALORE (8)
+juil.-25 18:44:16.860 [AWSBatch-executor-20] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (10)` submitted > job=fa0f7199-2b00-4b18-bbbb-307f57404be3; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/6f/dc27160a3b0544944919bf866186dc
+juil.-25 18:44:16.860 [AWSBatch-executor-20] INFO  nextflow.Session - [6f/dc2716] Submitted process > FASTQC (10)
+juil.-25 18:44:17.412 [AWSBatch-executor-11] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `FASTQC (7)` submitted > job=5467cf8f-e5f0-400a-b7a0-d77cb9b37ce6; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/42/6eb00983b09b3b39e4a47c245ef96f
+juil.-25 18:44:17.412 [AWSBatch-executor-11] INFO  nextflow.Session - [42/6eb009] Submitted process > FASTQC (7)
+juil.-25 18:47:34.961 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: FASTQC (5); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/14/ed9a30e75033e753bc060edfb2ac6e]
+juil.-25 18:47:34.965 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+juil.-25 18:47:35.448 [TaskFinalizer-1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+juil.-25 18:48:54.956 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: TRIM_GALORE (5); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/17/9d6560ced59e8cc1f98603c409923a]
+juil.-25 18:48:56.452 [AWSBatch-executor-43] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] [AWS BATCH] Found job definition name=nf-community-wave-seqera-io-library-hisat2_samtools-5e49f68a37dc010e:1; container=community.wave.seqera.io/library/hisat2_samtools:5e49f68a37dc010e
+juil.-25 18:48:56.565 [AWSBatch-executor-43] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `HISAT2_ALIGN (1)` submitted > job=78977094-2f21-4c3b-aab4-5d0053552030; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/09/9709440c5c8420fbda535e171a5b19
+juil.-25 18:48:56.565 [AWSBatch-executor-43] INFO  nextflow.Session - [09/970944] Submitted process > HISAT2_ALIGN (1)
+juil.-25 18:49:14.926 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: FASTQC (4); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/cc/135887896adcd3ab752d1f3441c95f]
+juil.-25 18:49:24.612 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 18 -- submitted tasks are shown below
+~> TaskHandler[id: 14; name: TRIM_GALORE (7); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/3d/6d051c7adf173d2de2e9cda582b8e6]
+~> TaskHandler[id: 16; name: FASTQC (8); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/65/e9cb64e99625cbf43e28a0412ddcdb]
+~> TaskHandler[id: 17; name: TRIM_GALORE (9); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/42/d2556a1ce152d3bd542b4c059393db]
+~> TaskHandler[id: 12; name: FASTQC (6); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/35/827a3ae1d9557ee335755d784aa074]
+~> TaskHandler[id: 18; name: FASTQC (9); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/da/68a39ee43a17f1eccafa6f17bc596c]
+~> TaskHandler[id: 4; name: TRIM_GALORE (3); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/d7/b6b4c7cf6752261a878b07d70fb141]
+~> TaskHandler[id: 3; name: TRIM_GALORE (2); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/ca/62a5c51bbe88bf3a39b17dc269c5a9]
+~> TaskHandler[id: 5; name: FASTQC (2); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/c5/e6e63cae6ab6b0f68c858f03632ff4]
+~> TaskHandler[id: 19; name: TRIM_GALORE (10); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/86/3f43771219733a31b6837d3d070b47]
+~> TaskHandler[id: 1; name: TRIM_GALORE (1); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/a2/a5b51d78a039177e0d7384e8bc556e]
+.. remaining tasks omitted.
+juil.-25 18:51:25.002 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: FASTQC (7); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/42/6eb00983b09b3b39e4a47c245ef96f]
+juil.-25 18:52:45.058 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 21; name: HISAT2_ALIGN (1); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/09/9709440c5c8420fbda535e171a5b19]
+juil.-25 18:53:05.013 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: FASTQC (1); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/61/a579c336bb841cb34aaaa23dd12314]
+juil.-25 18:53:35.212 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: FASTQC (8); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/65/e9cb64e99625cbf43e28a0412ddcdb]
+juil.-25 18:53:45.117 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: FASTQC (9); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/da/68a39ee43a17f1eccafa6f17bc596c]
+juil.-25 18:54:24.817 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 13 -- submitted tasks are shown below
+~> TaskHandler[id: 14; name: TRIM_GALORE (7); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/3d/6d051c7adf173d2de2e9cda582b8e6]
+~> TaskHandler[id: 17; name: TRIM_GALORE (9); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/42/d2556a1ce152d3bd542b4c059393db]
+~> TaskHandler[id: 12; name: FASTQC (6); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/35/827a3ae1d9557ee335755d784aa074]
+~> TaskHandler[id: 4; name: TRIM_GALORE (3); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/d7/b6b4c7cf6752261a878b07d70fb141]
+~> TaskHandler[id: 3; name: TRIM_GALORE (2); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/ca/62a5c51bbe88bf3a39b17dc269c5a9]
+~> TaskHandler[id: 5; name: FASTQC (2); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/c5/e6e63cae6ab6b0f68c858f03632ff4]
+~> TaskHandler[id: 19; name: TRIM_GALORE (10); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/86/3f43771219733a31b6837d3d070b47]
+~> TaskHandler[id: 1; name: TRIM_GALORE (1); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/a2/a5b51d78a039177e0d7384e8bc556e]
+~> TaskHandler[id: 7; name: TRIM_GALORE (4); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/71/d129c888976013a678c5a501c83f23]
+~> TaskHandler[id: 6; name: FASTQC (3); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/62/1ee00b1d2142b693469d8cf0552ef9]
+.. remaining tasks omitted.
+juil.-25 18:54:45.315 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: FASTQC (2); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/c5/e6e63cae6ab6b0f68c858f03632ff4]
+juil.-25 18:55:25.198 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: FASTQC (6); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/35/827a3ae1d9557ee335755d784aa074]
+juil.-25 18:55:35.173 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: FASTQC (3); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/62/1ee00b1d2142b693469d8cf0552ef9]
+juil.-25 18:57:15.290 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: TRIM_GALORE (4); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/71/d129c888976013a678c5a501c83f23]
+juil.-25 18:57:16.757 [AWSBatch-executor-94] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `HISAT2_ALIGN (2)` submitted > job=1416d29e-f16c-4792-b964-fe2c00b0b5b4; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/5a/7d85bc52230b1caaa21ae280989b27
+juil.-25 18:57:16.759 [AWSBatch-executor-94] INFO  nextflow.Session - [5a/7d85bc] Submitted process > HISAT2_ALIGN (2)
+juil.-25 18:58:05.321 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 20; name: FASTQC (10); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/6f/dc27160a3b0544944919bf866186dc]
+juil.-25 18:59:24.983 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 9 -- submitted tasks are shown below
+~> TaskHandler[id: 14; name: TRIM_GALORE (7); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/3d/6d051c7adf173d2de2e9cda582b8e6]
+~> TaskHandler[id: 17; name: TRIM_GALORE (9); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/42/d2556a1ce152d3bd542b4c059393db]
+~> TaskHandler[id: 4; name: TRIM_GALORE (3); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/d7/b6b4c7cf6752261a878b07d70fb141]
+~> TaskHandler[id: 3; name: TRIM_GALORE (2); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/ca/62a5c51bbe88bf3a39b17dc269c5a9]
+~> TaskHandler[id: 19; name: TRIM_GALORE (10); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/86/3f43771219733a31b6837d3d070b47]
+~> TaskHandler[id: 1; name: TRIM_GALORE (1); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/a2/a5b51d78a039177e0d7384e8bc556e]
+~> TaskHandler[id: 11; name: TRIM_GALORE (6); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/cb/341221ea991c1f38c4c6c981952d35]
+~> TaskHandler[id: 15; name: TRIM_GALORE (8); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/a9/b0653b8cfd470533f0cb5e32e310fb]
+~> TaskHandler[id: 22; name: HISAT2_ALIGN (2); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/5a/7d85bc52230b1caaa21ae280989b27]
+juil.-25 19:04:25.060 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 9 -- submitted tasks are shown below
+~> TaskHandler[id: 14; name: TRIM_GALORE (7); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/3d/6d051c7adf173d2de2e9cda582b8e6]
+~> TaskHandler[id: 17; name: TRIM_GALORE (9); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/42/d2556a1ce152d3bd542b4c059393db]
+~> TaskHandler[id: 4; name: TRIM_GALORE (3); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/d7/b6b4c7cf6752261a878b07d70fb141]
+~> TaskHandler[id: 3; name: TRIM_GALORE (2); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/ca/62a5c51bbe88bf3a39b17dc269c5a9]
+~> TaskHandler[id: 19; name: TRIM_GALORE (10); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/86/3f43771219733a31b6837d3d070b47]
+~> TaskHandler[id: 1; name: TRIM_GALORE (1); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/a2/a5b51d78a039177e0d7384e8bc556e]
+~> TaskHandler[id: 11; name: TRIM_GALORE (6); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/cb/341221ea991c1f38c4c6c981952d35]
+~> TaskHandler[id: 15; name: TRIM_GALORE (8); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/a9/b0653b8cfd470533f0cb5e32e310fb]
+~> TaskHandler[id: 22; name: HISAT2_ALIGN (2); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/5a/7d85bc52230b1caaa21ae280989b27]
+juil.-25 19:05:05.563 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: TRIM_GALORE (8); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/a9/b0653b8cfd470533f0cb5e32e310fb]
+juil.-25 19:05:07.044 [AWSBatch-executor-142] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `HISAT2_ALIGN (3)` submitted > job=9b102c52-7937-48f7-91b6-49169f128298; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/cb/d386d5d63bf6e46201d61ec3f5bdbe
+juil.-25 19:05:07.045 [AWSBatch-executor-142] INFO  nextflow.Session - [cb/d386d5] Submitted process > HISAT2_ALIGN (3)
+juil.-25 19:05:45.437 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: TRIM_GALORE (9); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/42/d2556a1ce152d3bd542b4c059393db]
+juil.-25 19:05:46.912 [AWSBatch-executor-147] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `HISAT2_ALIGN (4)` submitted > job=244794fa-f84a-46a1-b83d-f6a9e6223fd1; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/5d/df313854e6a4337e03194d05250fe6
+juil.-25 19:05:46.912 [AWSBatch-executor-147] INFO  nextflow.Session - [5d/df3138] Submitted process > HISAT2_ALIGN (4)
+juil.-25 19:06:25.432 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 22; name: HISAT2_ALIGN (2); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/5a/7d85bc52230b1caaa21ae280989b27]
+juil.-25 19:07:05.476 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: TRIM_GALORE (7); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/3d/6d051c7adf173d2de2e9cda582b8e6]
+juil.-25 19:07:06.790 [AWSBatch-executor-156] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `HISAT2_ALIGN (5)` submitted > job=92830e93-cf86-495b-8def-46b4e3b32987; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/ab/57f1b58401f3ec43d6b70c1826a927
+juil.-25 19:07:06.790 [AWSBatch-executor-156] INFO  nextflow.Session - [ab/57f1b5] Submitted process > HISAT2_ALIGN (5)
+juil.-25 19:07:25.483 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: TRIM_GALORE (1); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/a2/a5b51d78a039177e0d7384e8bc556e]
+juil.-25 19:07:26.923 [AWSBatch-executor-159] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `HISAT2_ALIGN (6)` submitted > job=b4c92bb0-6542-48e9-9eab-7af8962e3303; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/47/33385a208550acdaac82541cd38d04
+juil.-25 19:07:26.924 [AWSBatch-executor-159] INFO  nextflow.Session - [47/33385a] Submitted process > HISAT2_ALIGN (6)
+juil.-25 19:09:25.164 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 8 -- submitted tasks are shown below
+~> TaskHandler[id: 4; name: TRIM_GALORE (3); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/d7/b6b4c7cf6752261a878b07d70fb141]
+~> TaskHandler[id: 3; name: TRIM_GALORE (2); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/ca/62a5c51bbe88bf3a39b17dc269c5a9]
+~> TaskHandler[id: 19; name: TRIM_GALORE (10); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/86/3f43771219733a31b6837d3d070b47]
+~> TaskHandler[id: 11; name: TRIM_GALORE (6); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/cb/341221ea991c1f38c4c6c981952d35]
+~> TaskHandler[id: 23; name: HISAT2_ALIGN (3); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/cb/d386d5d63bf6e46201d61ec3f5bdbe]
+~> TaskHandler[id: 24; name: HISAT2_ALIGN (4); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/5d/df313854e6a4337e03194d05250fe6]
+~> TaskHandler[id: 25; name: HISAT2_ALIGN (5); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/ab/57f1b58401f3ec43d6b70c1826a927]
+~> TaskHandler[id: 26; name: HISAT2_ALIGN (6); status: SUBMITTED; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/47/33385a208550acdaac82541cd38d04]
+juil.-25 19:10:45.565 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: TRIM_GALORE (6); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/cb/341221ea991c1f38c4c6c981952d35]
+juil.-25 19:10:47.104 [AWSBatch-executor-180] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `HISAT2_ALIGN (7)` submitted > job=29110e0a-985c-4027-966d-ee73a0ff7956; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/83/59a357972d991bf57fd81e9c307af5
+juil.-25 19:10:47.105 [AWSBatch-executor-180] INFO  nextflow.Session - [83/59a357] Submitted process > HISAT2_ALIGN (7)
+juil.-25 19:11:55.584 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: TRIM_GALORE (3); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/d7/b6b4c7cf6752261a878b07d70fb141]
+juil.-25 19:11:57.003 [AWSBatch-executor-188] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `HISAT2_ALIGN (8)` submitted > job=db54205f-f7c1-4883-bd04-696078558135; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/92/3aa79ada1d7138482663cf0c4fd065
+juil.-25 19:11:57.004 [AWSBatch-executor-188] INFO  nextflow.Session - [92/3aa79a] Submitted process > HISAT2_ALIGN (8)
+juil.-25 19:14:15.604 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: TRIM_GALORE (2); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/ca/62a5c51bbe88bf3a39b17dc269c5a9]
+juil.-25 19:14:17.035 [AWSBatch-executor-203] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `HISAT2_ALIGN (9)` submitted > job=dbaf32cc-b937-4e10-8db3-77c29d02313b; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/43/085444caae2dc3495e83f39237b4b2
+juil.-25 19:14:17.036 [AWSBatch-executor-203] INFO  nextflow.Session - [43/085444] Submitted process > HISAT2_ALIGN (9)
+juil.-25 19:14:25.273 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 8 -- submitted tasks are shown below
+~> TaskHandler[id: 19; name: TRIM_GALORE (10); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/86/3f43771219733a31b6837d3d070b47]
+~> TaskHandler[id: 23; name: HISAT2_ALIGN (3); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/cb/d386d5d63bf6e46201d61ec3f5bdbe]
+~> TaskHandler[id: 24; name: HISAT2_ALIGN (4); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/5d/df313854e6a4337e03194d05250fe6]
+~> TaskHandler[id: 25; name: HISAT2_ALIGN (5); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/ab/57f1b58401f3ec43d6b70c1826a927]
+~> TaskHandler[id: 26; name: HISAT2_ALIGN (6); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/47/33385a208550acdaac82541cd38d04]
+~> TaskHandler[id: 27; name: HISAT2_ALIGN (7); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/83/59a357972d991bf57fd81e9c307af5]
+~> TaskHandler[id: 28; name: HISAT2_ALIGN (8); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/92/3aa79ada1d7138482663cf0c4fd065]
+~> TaskHandler[id: 29; name: HISAT2_ALIGN (9); status: SUBMITTED; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/43/085444caae2dc3495e83f39237b4b2]
+juil.-25 19:19:25.379 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 8 -- submitted tasks are shown below
+~> TaskHandler[id: 19; name: TRIM_GALORE (10); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/86/3f43771219733a31b6837d3d070b47]
+~> TaskHandler[id: 23; name: HISAT2_ALIGN (3); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/cb/d386d5d63bf6e46201d61ec3f5bdbe]
+~> TaskHandler[id: 24; name: HISAT2_ALIGN (4); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/5d/df313854e6a4337e03194d05250fe6]
+~> TaskHandler[id: 25; name: HISAT2_ALIGN (5); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/ab/57f1b58401f3ec43d6b70c1826a927]
+~> TaskHandler[id: 26; name: HISAT2_ALIGN (6); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/47/33385a208550acdaac82541cd38d04]
+~> TaskHandler[id: 27; name: HISAT2_ALIGN (7); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/83/59a357972d991bf57fd81e9c307af5]
+~> TaskHandler[id: 28; name: HISAT2_ALIGN (8); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/92/3aa79ada1d7138482663cf0c4fd065]
+~> TaskHandler[id: 29; name: HISAT2_ALIGN (9); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/43/085444caae2dc3495e83f39237b4b2]
+juil.-25 19:21:45.745 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 25; name: HISAT2_ALIGN (5); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/ab/57f1b58401f3ec43d6b70c1826a927]
+juil.-25 19:22:35.785 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 23; name: HISAT2_ALIGN (3); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/cb/d386d5d63bf6e46201d61ec3f5bdbe]
+juil.-25 19:24:25.491 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 6 -- submitted tasks are shown below
+~> TaskHandler[id: 19; name: TRIM_GALORE (10); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/86/3f43771219733a31b6837d3d070b47]
+~> TaskHandler[id: 24; name: HISAT2_ALIGN (4); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/5d/df313854e6a4337e03194d05250fe6]
+~> TaskHandler[id: 26; name: HISAT2_ALIGN (6); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/47/33385a208550acdaac82541cd38d04]
+~> TaskHandler[id: 27; name: HISAT2_ALIGN (7); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/83/59a357972d991bf57fd81e9c307af5]
+~> TaskHandler[id: 28; name: HISAT2_ALIGN (8); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/92/3aa79ada1d7138482663cf0c4fd065]
+~> TaskHandler[id: 29; name: HISAT2_ALIGN (9); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/43/085444caae2dc3495e83f39237b4b2]
+juil.-25 19:25:15.857 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: HISAT2_ALIGN (4); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/5d/df313854e6a4337e03194d05250fe6]
+juil.-25 19:25:35.879 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: TRIM_GALORE (10); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/86/3f43771219733a31b6837d3d070b47]
+juil.-25 19:25:37.254 [AWSBatch-executor-272] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `HISAT2_ALIGN (10)` submitted > job=0072b749-20fa-4d64-9312-fe007ad3292b; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/d0/0c15e4c023de93458cbd46621e3071
+juil.-25 19:25:37.256 [AWSBatch-executor-272] INFO  nextflow.Session - [d0/0c15e4] Submitted process > HISAT2_ALIGN (10)
+juil.-25 19:25:37.487 [PublishDir-6] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'S3StreamUploader' minSize=10; maxSize=12; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+juil.-25 19:28:15.944 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 26; name: HISAT2_ALIGN (6); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/47/33385a208550acdaac82541cd38d04]
+juil.-25 19:29:25.667 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 4 -- submitted tasks are shown below
+~> TaskHandler[id: 27; name: HISAT2_ALIGN (7); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/83/59a357972d991bf57fd81e9c307af5]
+~> TaskHandler[id: 28; name: HISAT2_ALIGN (8); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/92/3aa79ada1d7138482663cf0c4fd065]
+~> TaskHandler[id: 29; name: HISAT2_ALIGN (9); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/43/085444caae2dc3495e83f39237b4b2]
+~> TaskHandler[id: 30; name: HISAT2_ALIGN (10); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/d0/0c15e4c023de93458cbd46621e3071]
+juil.-25 19:34:16.293 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 28; name: HISAT2_ALIGN (8); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/92/3aa79ada1d7138482663cf0c4fd065]
+juil.-25 19:34:25.758 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 3 -- submitted tasks are shown below
+~> TaskHandler[id: 27; name: HISAT2_ALIGN (7); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/83/59a357972d991bf57fd81e9c307af5]
+~> TaskHandler[id: 29; name: HISAT2_ALIGN (9); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/43/085444caae2dc3495e83f39237b4b2]
+~> TaskHandler[id: 30; name: HISAT2_ALIGN (10); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/d0/0c15e4c023de93458cbd46621e3071]
+juil.-25 19:35:26.160 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: HISAT2_ALIGN (9); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/43/085444caae2dc3495e83f39237b4b2]
+juil.-25 19:35:46.143 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: HISAT2_ALIGN (7); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/83/59a357972d991bf57fd81e9c307af5]
+juil.-25 19:39:25.878 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 30; name: HISAT2_ALIGN (10); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/d0/0c15e4c023de93458cbd46621e3071]
+juil.-25 19:44:26.049 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 30; name: HISAT2_ALIGN (10); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/d0/0c15e4c023de93458cbd46621e3071]
+juil.-25 19:49:26.226 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 30; name: HISAT2_ALIGN (10); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/d0/0c15e4c023de93458cbd46621e3071]
+juil.-25 19:54:26.368 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 30; name: HISAT2_ALIGN (10); status: RUNNING; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/d0/0c15e4c023de93458cbd46621e3071]
+juil.-25 19:57:26.985 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 30; name: HISAT2_ALIGN (10); status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/d0/0c15e4c023de93458cbd46621e3071]
+juil.-25 19:57:32.035 [AWSBatch-executor-464] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] [AWS BATCH] Found job definition name=nf-community-wave-seqera-io-library-pip_multiqc-ad8f247edb55897c:1; container=community.wave.seqera.io/library/pip_multiqc:ad8f247edb55897c
+juil.-25 19:57:32.148 [AWSBatch-executor-464] DEBUG n.c.aws.batch.AwsBatchTaskHandler - [AWS BATCH] Process `MULTIQC` submitted > job=866a219b-a6fa-409a-b7f0-7ab50a0cc949; work-dir=s3://diy-transcriptomics-rna-seq-data/test_env/05/cf6df12d4297d4ddcd1556f5a6545c
+juil.-25 19:57:32.148 [AWSBatch-executor-464] INFO  nextflow.Session - [05/cf6df1] Submitted process > MULTIQC
+juil.-25 19:59:26.624 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor awsbatch > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 31; name: MULTIQC; status: SUBMITTED; exit: -; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/05/cf6df12d4297d4ddcd1556f5a6545c]
+juil.-25 20:01:06.985 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 31; name: MULTIQC; status: COMPLETED; exit: 0; error: -; workDir: s3://diy-transcriptomics-rna-seq-data/test_env/05/cf6df12d4297d4ddcd1556f5a6545c]
+juil.-25 20:01:07.287 [main] DEBUG nextflow.Session - Session await > all processes finished
+juil.-25 20:01:16.660 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: awsbatch) - terminating tasks monitor poll loop
+juil.-25 20:01:16.661 [main] DEBUG nextflow.Session - Session await > all barriers passed
+juil.-25 20:01:16.664 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+juil.-25 20:01:21.674 [main] INFO  nextflow.util.ThreadPoolHelper - Waiting for file transfers to complete (1 files)
+juil.-25 20:01:23.398 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+juil.-25 20:01:23.420 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=31; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=18h 4m 21s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=20; peakCpus=30; peakMemory=116 GB; ]
+juil.-25 20:01:23.421 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+juil.-25 20:01:23.424 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+juil.-25 20:01:25.584 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+juil.-25 20:01:25.972 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+juil.-25 20:01:26.041 [main] INFO  org.pf4j.AbstractPluginManager - Stop plugin 'nf-amazon@2.15.0'
+juil.-25 20:01:26.041 [main] DEBUG nextflow.plugin.BasePlugin - Plugin stopped nf-amazon
+juil.-25 20:01:26.042 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+juil.-25 20:01:26.043 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'S3StreamUploader' shutdown completed (hard=false)
+juil.-25 20:01:26.043 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

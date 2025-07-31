@@ -2,12 +2,12 @@
 
 process KALLISTO_QUAN {
 
-    container "community.wave.seqera.io/library/kallisto:d61e08588cd20f0f"
+    container "community.wave.seqera.io/library/kallisto:0.51.1--b63691b6841c7a52"
     publishDir params.outdir, mode: 'copy'
 
     input:
     path reads
-    path index_zip
+    path index
 
     output:
     path "${reads.simpleName}-kallisto", emit: abundance 
@@ -15,8 +15,7 @@ process KALLISTO_QUAN {
 
     script:
     """
-    tar -xzvf $index_zip
-    kallisto quant -i ${index_zip.simpleName} \
+    kallisto quant -i $index \
     -o ${reads.simpleName}-kallisto \
     -t ${task.cpus} \
     --single \
