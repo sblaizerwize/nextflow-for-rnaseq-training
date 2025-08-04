@@ -4,7 +4,7 @@ This repository provides a cloud-based implementation of RNA-seq workflows for t
 
 The goal is to demonstrate how to run scalable and reproducible RNA-seq pipelines using Nextflow, while leveraging AWS compute resources for performance, flexibility, and cost optimization.
 
-Visit the following link to consult the principal results after running the three presented pipelines: https://sblaizerwize.github.io/
+Visit the following link to consult the principal results after running the three presented pipelines: **https://sblaizerwize.github.io/nextflow-for-rnaseq-training/**
 
 We would like to thank AWS and the University of Navarra for providing cloud resources (1,000 AWS credits) to support this project.
 

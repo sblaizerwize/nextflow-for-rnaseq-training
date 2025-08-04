@@ -4,7 +4,8 @@ title: Home
 nav_order: 1
 ---
 
-# RNA-seq Pipeline Results
+# Pipeline Results
+This a summary of the main results obtained for each Nextflow pipeline run using AWS Batch. 
 
 ## **nextflow-for-rnaseq-aws pipeline**
 - [MULTIQC Report](/reports/nextflow-for-rnaseq-aws/all_single-end.html)
@@ -20,5 +21,6 @@ nav_order: 1
 - [Nextflow Report](/reports/rnaseq-aws-diy-kallisto/rnaseq-aws-diy-kallisto-report-config.html)
 - [Nextflow Timeline Report](//reports/rnaseq-aws-diy-kallisto/rnaseq-aws-diy-kallisto-timeline.html)
 
+Feel free to explore the code and run the pipeline directly from the repository.
 
 

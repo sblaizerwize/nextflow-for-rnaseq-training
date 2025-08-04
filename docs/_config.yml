@@ -1,2 +1,4 @@
+title: "Nextflow RNA-seq Training"
+author: "Salomon Marquez"
+description: "A training project using Nextflow and AWS for RNA-seq analysis."
 theme: minima
-title: "RNA-seq on AWS"
