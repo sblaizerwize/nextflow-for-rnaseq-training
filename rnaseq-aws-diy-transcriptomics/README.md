@@ -1,4 +1,4 @@
-# RNA-seq analysis of data from the DIY Transcriptomics course using HISAT2 and AWS resources
+# Running the rnaseq-aws-diy-transcriptomics pipeline  
 
 This pipeline performs an RNA-seq analysis on skin data provided by the [DIY Transcriptomics course](https://diytranscriptomics.com/) (approximately 30 GB), which includes 10 patient samples. The goal is to provide guidelines on how to set up AWS infrastructure tailored to the dataset, in order to better select EC2 instance types, distribute the Nextflow workload across different compute environments using queues, and strike a balance between performance and cost. 
 

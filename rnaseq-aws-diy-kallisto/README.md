@@ -1,4 +1,4 @@
-# RNA-seq analysis of data from the DIY Transcriptomics course using Kallisto and AWS resources
+# Running the rnaseq-aws-diy-kallisto pipeline  
 
 This pipeline performs an RNA-seq analysis on skin data provided by the [DIY Transcriptomics course](https://diytranscriptomics.com/) (approximately 30 GB), which includes 10 patient samples. The goal is to use Kallisto as the pseudoaligner to generate `abundance.tsv` files for each sample. 
 

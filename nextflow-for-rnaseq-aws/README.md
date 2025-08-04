@@ -1,4 +1,4 @@
-# Running a Nextflow pipeline using AWS resources
+# Running the nextflow-for-rnaseq-aws pipeline
 
 This Nextflow pipeline replicates the content of the [Nextflow for RNAseq training course](https://training.nextflow.io/latest/nf4_science/rnaseq/) but instead of running it locally, it goes further because it uses AWS cloud resources to complete the RNAseq analysis. 
 
