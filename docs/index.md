@@ -19,7 +19,7 @@ This a summary of the main results obtained for each Nextflow pipeline run using
 ## **rnaseq-aws-diy-kallisto pipeline**
 - [MULTIQC Report](/reports/rnaseq-aws-diy-kallisto/all_single-end.html)
 - [Nextflow Report](/reports/rnaseq-aws-diy-kallisto/rnaseq-aws-diy-kallisto-report-config.html)
-- [Nextflow Timeline Report](//reports/rnaseq-aws-diy-kallisto/rnaseq-aws-diy-kallisto-timeline.html)
+- [Nextflow Timeline Report](/reports/rnaseq-aws-diy-kallisto/rnaseq-aws-diy-kallisto-timeline.html)
 
 Feel free to explore the code and run the pipeline directly from the repository.
 
