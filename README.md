@@ -4,9 +4,9 @@ This repository provides a cloud-based implementation of RNA-seq workflows for t
 
 The goal is to demonstrate how to run scalable and reproducible RNA-seq pipelines using Nextflow, while leveraging AWS compute resources for performance, flexibility, and cost optimization.
 
-Visit the following link to consult the principal results after running the three presented pipelines: **https://sblaizerwize.github.io/nextflow-for-rnaseq-training/**
-
 We would like to thank AWS and the University of Navarra for providing cloud resources (1,000 AWS credits) to support this project.
+
+⚡ Click [here](https://sblaizerwize.github.io/nextflow-for-rnaseq-training/) to consult a summary of the project and the obtained results. 
 
 ## Table of Contents
 - [Motivation](#introduction)
@@ -51,7 +51,7 @@ Before running any pipeline from this repository, you must configure AWS to enab
 
 To set this up, we strongly recommend following the instructions provided in LW Pembleton’s [Nextflow on AWS Batch](https://lpembleton.rbind.io/posts/nextflow-on-aws-batch/) blog post. It's comprehensive and aligns well with the structure of this project.
 
-> **New to Nextflow?** We suggest completing the "Hello Nextflow" and "Nextflow for RNA-seq" tutorials before diving into this repository. It’ll save you time and confusion.
+> **New to Nextflow?** We suggest completing the [Hello Nextflow](https://training.nextflow.io/2.2/hello_nextflow/) and [Nextflow for RNA-seq](https://training.nextflow.io/latest/nf4_science/rnaseq/) tutorials before diving into this repository. It’ll save you time and confusion.
 
 
 ### Uploading RNA-seq data to an S3 bucket
@@ -95,9 +95,8 @@ Here is a summary of the S3 bucket content:
 | `results`     | Output directory where processed results are stored, such as alignment files (e.g., BAM), quantification results (e.g., counts or TPMs), and quality reports (e.g., FastQC, MultiQC). |
 | `test_env`    | Working directory used by Nextflow to store intermediate files, temporary data, and execution logs for each process run. This may include `.command.log`, `.command.err`, and subdirectories for task-specific runs. |
 
-```
 > ⚠️ **Note:** The `single-end.csv` file contains references to the single-end samples located in the `nextflow-for-rnaseq` bucket. This approach simplifies pipeline execution.
-```
+
 
 Here is the content of the CSV file:
 ```
