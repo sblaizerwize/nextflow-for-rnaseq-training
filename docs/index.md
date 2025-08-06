@@ -12,6 +12,8 @@ The goal is to demonstrate how to run scalable and reproducible RNA-seq pipeline
 
 We would like to thank AWS and the University of Navarra for providing cloud resources (1,000 AWS credits) to support this project 💰.
 
+⚡ Click [here](https://github.com/sblaizerwize/nextflow-for-rnaseq-training/tree/main) to view this project on GitHub. 
+
 ---
 
 # Motivation
@@ -26,7 +28,7 @@ This project began after we received $1,000 in AWS Cloud credits. Our goal was t
 
 # RNA-seq Pipelines
 
-The content of this project is structured as follows:
+The content of this [project](https://github.com/sblaizerwize/nextflow-for-rnaseq-training/tree/main) is structured as follows:
 
 | **Pipeline** | **Description** |
 | ------ | ------ |
