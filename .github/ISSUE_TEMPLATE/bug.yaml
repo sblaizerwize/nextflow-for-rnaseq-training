@@ -6,13 +6,6 @@ body:
   - type: markdown
     attributes:
       description: Use the following conventions to name your issue:
-              fix: <>
-              bug: <>
-              release: <>
-              feat: <> 
-              refactor: <>
-              docs: <>
-              chore: <>
 
   - type: checkboxes
     id: checks
