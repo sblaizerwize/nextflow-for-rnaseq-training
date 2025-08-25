@@ -1,7 +1,7 @@
 # Disable blank issues: users must pick a template or follow a contact link
 blank_issues_enabled: false  
 
-# Contact links: these appear as extra options in the "New Issue" UI
+# Contact links
 contact_links:
   - name: 💬 Join Discord
     url: "https://discord.gg/7GEdHR6Pfg"
