@@ -42,8 +42,7 @@ body:
     attributes:
       label: Environment
       description: |
-        Which version of TimeCopilot are you using? 
-        Specify details of your local environment such as OS, architecture, Python and TimeCopilot's version. 
+        Which version of TimeCopilot are you using? Specify details of your local environment such as OS, architecture, Python and TimeCopilot's version. 
       render: Text
     validations:
       required: true
