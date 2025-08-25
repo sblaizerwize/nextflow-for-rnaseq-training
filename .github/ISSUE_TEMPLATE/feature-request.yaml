@@ -1,7 +1,9 @@
 # Template adapted from Pydantic-AI issue templates
 # Source: https://github.com/pydantic/pydantic-ai
+
 name: TimeCopilot - Feature Request
 description: Suggest a new feature to implement
+title: "feat: "
 labels: ["enhancement"]
 
 body:

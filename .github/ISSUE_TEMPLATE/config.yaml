@@ -1,5 +1,14 @@
-blank_issues_enabled: false
+# Disable blank issues: users must pick a template or follow a contact link
+blank_issues_enabled: false  
+
+# Contact links: these appear as extra options in the "New Issue" UI
 contact_links:
-  - name: 💬 Join Discord 
-    url: 'https://discord.gg/7GEdHR6Pfg'
-    about: To ask questions and get help about TimeCopilot
+  - name: 💬 Join Discord
+    url: "https://discord.gg/7GEdHR6Pfg"
+    about: Ask questions and get help about TimeCopilot outside of GitHub issues.
+  - name: 📖 Documentation
+    url: "https://timecopilot.dev/"
+    about: Check the docs before opening an issue.
+  - name: 🙌 Contributing Guide
+    url: "https://timecopilot.dev/contributing/"
+    about: Learn how to contribute to TimeCopilot.
