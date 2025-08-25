@@ -9,19 +9,17 @@ labels: ["question"]
 body:
   - type: markdown
     attributes:
-      value: How can I help you? 🤝
+      value: How can we support you? 🤝
 
   - type: textarea
     id: question
     attributes:
-      label: Question
+      label: Description
       description: |
-        Provide details about your question. 🙏
-
-        You might like to include:
+        Provide details about your question.
         * Code snippets showing what you've tried
         * Error messages you're encountering (if any)
-        * Expected vs actual behavior
+        * Expected vs. actual behavior
         * Your use case and what you're trying to achieve
     validations:
       required: true
@@ -29,8 +27,8 @@ body:
   - type: textarea
     id: context
     attributes:
-      label: Additional Information
+      label: Context
       description: |
-        Provide additional details of your local environment.
+        Provide additional information.
         * Python and TimeCopilot's version
-        * Relevant configuration details 📝
+        * Relevant configuration details
