@@ -1,7 +1,9 @@
+---
 name: TimeCopilot Bug
-description: Report a bug or unexpected behavior
+about: Report a bug or unexpected behavior
 title: "bug: "
-labels: ["bug"]
+labels: bug
+---
 
 body:
   - type: markdown
