@@ -1,6 +1,6 @@
 ---
 name: TimeCopilot Bug
-about: Report a bug or unexpected behavior
+description: Report a bug or unexpected behavior
 title: "bug: "
 labels: bug
 ---
@@ -28,12 +28,7 @@ body:
       description: |
         Explain what you're seeing and the outcome you expect.
       placeholder: Tell us what you see!
-      value: |
-        Steps to reproduce the behavior:
-        1. Go to '...'
-        2. Click on '....'
-        3. Scroll down to '....'
-        4. See error
+      value: Steps to reproduce the behavior...
     validations:
       required: true
 
