@@ -1,3 +1,6 @@
+# Template adapted from Pydantic-AI issue templates
+# Source: https://github.com/pydantic/pydantic-ai
+
 name: TimeCopilot - Bug Report
 description: Report a bug or unexpected behavior
 title: "bug: "
@@ -26,7 +29,12 @@ body:
       description: |
         Explain what you're seeing and the outcome you expect.
       placeholder: Tell us what you see!
-      value: Steps to reproduce the behavior...
+      value: |
+        Steps to reproduce the behavior...
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
     validations:
       required: true
 

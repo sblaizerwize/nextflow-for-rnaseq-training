@@ -1,18 +1,22 @@
-name: ❓ Pydantic AI Question
-description: "Ask a question about Pydantic AI"
+# Template adapted from Pydantic-AI issue templates
+# Source: https://github.com/pydantic/pydantic-ai
+
+name: TimeCopilot - Question
+description: "Ask a question about TimeCopilot"
+title: "question: "
 labels: ["question"]
 
 body:
   - type: markdown
     attributes:
-      value: Thank you for reaching out to the Pydantic AI community! We're here to help! 🤝
+      value: How can I help you? 🤝
 
   - type: textarea
     id: question
     attributes:
       label: Question
       description: |
-        Please provide as much detail as possible about your question. 🙏
+        Provide details about your question. 🙏
 
         You might like to include:
         * Code snippets showing what you've tried
@@ -25,9 +29,8 @@ body:
   - type: textarea
     id: context
     attributes:
-      label: Additional Context
+      label: Additional Information
       description: |
-        Please provide any additional context that might help us better understand your question, such as:
-        * Your Pydantic AI version
-        * Your Python version
-        * Relevant configuration or environment details 📝
+        Provide additional details of your local environment.
+        * Python and TimeCopilot's version
+        * Relevant configuration details 📝
