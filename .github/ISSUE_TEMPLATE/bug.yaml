@@ -12,7 +12,7 @@ body:
     id: checks
     attributes:
       label: Initial Checklist
-      description: Ensure you comply with the following before moving ahead:
+      description: Ensure you comply with the following before moving ahead.
       options:
         - label: I confirm that I'm using the latest version of TimeCopilot.
           required: true
@@ -25,6 +25,13 @@ body:
       label: What happened? 
       description: |
         Explain what you're seeing and the outcome you expect.
+      placeholder: Tell us what you see!
+      value: |
+        Steps to reproduce the behavior:
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
     validations:
       required: true
 
