@@ -1,5 +1,5 @@
 # Disable blank issues: users must pick a template or follow a contact link
-blank_issues_enabled: false  
+blank_issues_enabled: true  
 
 # Contact links
 contact_links:
